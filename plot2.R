@@ -8,12 +8,12 @@
 # Plot 2
 #   Plot Global Active Power verses DataTime
 
-fileName <-"household_power_consumption.txt"  #name of file to load
-dateList <-  "1/2/2007;2/2/2007"              #list of dates to be plotted, day/month/year
+fileName <- "household_power_consumption.txt" #name of file to load
+dateList <- "1/2/2007;2/2/2007"               #list of dates to be plotted, day/month/year format
 
 print("Plot 2 - reading file and creating data frame")
-lineCount  <- 0 #count all lines read from file
-rowCount   <- 0 #count number of rows added to data frame
+lineCount  <- 0 #count of all lines read from file
+rowCount   <- 0 #count of number of rows added to data frame
 
 #read all the lines in the data file
 con <- file(fileName,"r")
@@ -22,13 +22,13 @@ while(length(line <- readLines(con,1)) > 0){
     lineData  <- unlist(strsplit(line,";"))   #split line into individual data fields
     if (lineCount == 1)
     {
-        headerLen  <- length(lineData)        #process first record with column names to create data frame "df"
+        headerLen  <- length(lineData)        #process first line containing column names to create data frame "df"
         df <- as.data.frame(setNames(replicate(headerLen,character(1), simplify = F), lineData), stringsAsFactors = FALSE)      
     } else {
-        dateField  <- lineData[1]             #get first data field which is date string
+        dateField  <- lineData[1]             #for all other lines get first data field which is date string
         if (length(grep(dateField, dateList)) > 0) #check to see if dateField in dateList
         {
-            df <- rbind(df, lineData)         #add row to data frame
+            df <- rbind(df, lineData)         #add row to data frame, if line date in list string
             rowCount <- rowCount + 1          #count number of rows added to data frame
         }
     }
