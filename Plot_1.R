@@ -48,7 +48,7 @@ df <- cbind(DateTime,df)
 
 #Plot 1
 print("Plot 1 - plotting data")
-hist(df$Global_active_power, main = "Global Active Power", xlab  = "Global Active Power (kilowatts)")
+hist(df$Global_active_power, col = "red", main="Global Active Power", xlab="Global Active Power (kilowatts)")
 dev.copy(png, filename = "plot1.png", width = 480, height = 480)
 dev.off()
 print("Plot 1 - plot finished")
