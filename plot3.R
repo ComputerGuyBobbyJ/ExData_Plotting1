@@ -52,7 +52,7 @@ with(df, plot(DateTime,Sub_metering_1, type = "n", xlab="", ylab="Energy sub met
 with(df, points(DateTime,Sub_metering_1, type="o", pch = "", col="black"))
 with(df, points(DateTime,Sub_metering_2, type="o", pch = "", col="red"))
 with(df, points(DateTime,Sub_metering_3, type="o", pch = "", col="blue"))
-legend("topright",lty=1, col=c("black","red","blue"),legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+legend("topright",lty=1, col=c("black","red","blue"),legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), cex=.90)
 dev.copy(png, filename = "plot3.png", width = 480, height = 480)
 dev.off()
 print("Plot 3 - plot finished")
