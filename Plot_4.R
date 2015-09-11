@@ -61,7 +61,7 @@ with(df, plot(DateTime,Sub_metering_1, type = "n", xlab="", ylab="Energy sub met
 with(df, points(DateTime,Sub_metering_1, type="o", pch = "", col="black"))
 with(df, points(DateTime,Sub_metering_2, type="o", pch = "", col="red"))
 with(df, points(DateTime,Sub_metering_3, type="o", pch = "", col="blue"))
-legend("topright",lty=1, col=c("black","red","blue"),legend=c("SubMtr1", "SubMtr2", "SubMtr3"))
+legend("top",lty=1, box.lty=0, col=c("black","red","blue"),legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), cex=.80)
 
 #Sub Plot 4
 plot(df$DateTime,df$Global_reactive_power, type="o", pch="", xlab = "datetime", ylab="Global_reactive_power")
